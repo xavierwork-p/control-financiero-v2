@@ -1,16 +1,173 @@
-# React + Vite
+# 💰 Control Financiero V2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React + Vite** para la gestión financiera personal.
+Esta versión representa una evolución completa del proyecto inicial de control de gastos, incorporando analytics, objetivos financieros, gastos fijos y dashboards interactivos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Demo Online
 
-## React Compiler
+## 👉 Demo del proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://control-financiero-v2.vercel.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 📌 Características
+
+## 📊 Dashboard Financiero
+
+* Balance total
+* Ingresos y gastos
+* Balance en banco y efectivo
+* Gráficos interactivos
+* Analytics visuales
+
+---
+
+## 💸 Transacciones
+
+* Agregar movimientos
+* Eliminar transacciones
+* Categorías personalizadas
+* Fechas y cuentas
+* Persistencia con LocalStorage
+
+---
+
+## 🎯 Objetivos Financieros
+
+* Crear metas de ahorro
+* Barras de progreso
+* Aportes dinámicos
+* Seguimiento visual del avance
+
+---
+
+## 🧾 Gastos Fijos
+
+* Registro de pagos recurrentes
+* Categorías
+* Día de pago
+* Edición de gastos
+* Total mensual automático
+
+---
+
+## 📅 Gastos Planificados
+
+* Registro de pagos únicos
+* Fechas programadas
+* Seguimiento de gastos futuros
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+* React
+* Vite
+* JavaScript
+* CSS3
+* Recharts
+* Lucide React
+* LocalStorage API
+
+---
+
+# 📱 Diseño Responsive
+
+La aplicación fue desarrollada con enfoque responsive:
+
+* Desktop
+* Tablets
+* Mobile
+
+---
+
+# 🧠 Conceptos aplicados
+
+## React
+
+* useState
+* useEffect
+* Componentes reutilizables
+* Props
+* Renderizado condicional
+
+---
+
+## Frontend
+
+* Manipulación dinámica del DOM
+* Persistencia de datos
+* Diseño responsive
+* Manejo de formularios
+* CRUD completo
+
+---
+
+# 📂 Estructura del proyecto
+
+```bash
+src/
+│
+├── components/
+│   ├── DashboardCards.jsx
+│   ├── FormularioTransaccion.jsx
+│   ├── GraficoCategorias.jsx
+│   ├── GraficoMensual.jsx
+│   ├── GastosFijos.jsx
+│   ├── ObjetivosFinancieros.jsx
+│   ├── Sidebar.jsx
+│   └── TransaccionesTabla.jsx
+│
+├── styles/
+│   └── dashboard.css
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# ⚡ Instalación local
+
+```bash
+# Clonar repositorio
+git clone https://github.com/xavierwork-p/control-financiero-v2.git
+
+# Entrar al proyecto
+cd control-financiero-v2
+
+# Instalar dependencias
+npm install
+
+# Ejecutar servidor
+npm run dev
+```
+
+---
+
+# 📈 Evolución del proyecto
+
+## V1
+
+Aplicación básica de control de gastos con HTML, CSS y JavaScript.
+
+## V2
+
+Migración completa a React con:
+
+* dashboard profesional
+* analytics
+* objetivos financieros
+* gastos fijos
+* arquitectura modular
+* navegación interna
+
+---
+
+# 👨‍💻 Autor
+
+Desarrollado por **Xavier Peralta**
+GitHub: [xavierwork-p](https://github.com/xavierwork-p?utm_source=chatgpt.com)
