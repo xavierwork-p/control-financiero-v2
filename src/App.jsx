@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
-import Balance from "./components/Balance";
+import Sidebar from "./components/Sidebar";
+import DashboardCards from "./components/DashboardCards";
+import TransaccionesTabla from "./components/TransaccionesTabla";
 import FormularioTransaccion from "./components/FormularioTransaccion";
-import ListaTransacciones from "./components/ListaTransacciones";
 
-import "./App.css";
+import "./styles/dashboard.css";
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
 
       // Recupera datos guardados
       const guardadas =
-        localStorage.getItem("transacciones");
+        localStorage.getItem(
+          "transacciones"
+        );
 
       return guardadas
         ? JSON.parse(guardadas)
@@ -22,7 +25,7 @@ function App() {
 
     });
 
-  // Guarda cambios en LocalStorage
+  // Guarda en LocalStorage
   useEffect(() => {
 
     localStorage.setItem(
@@ -32,51 +35,90 @@ function App() {
 
   }, [transacciones]);
 
-  // Agregar transacción
   const agregarTransaccion = (
-    transaccion
-  ) => {
+  nuevaTransaccion
+) => {
 
-    setTransacciones([
-      ...transacciones,
-      transaccion
-    ]);
+  setTransacciones([
+    nuevaTransaccion,
+    ...transacciones
+  ]);
 
-  };
+};
+const eliminarTransaccion = (id) => {
 
-  // Eliminar transacción
-  const eliminarTransaccion = (id) => {
-
-    setTransacciones(
-      transacciones.filter(
-        item => item.id !== id
-      )
+  const nuevasTransacciones =
+    transacciones.filter(
+      item => item.id !== id
     );
 
-  };
+  setTransacciones(
+    nuevasTransacciones
+  );
+
+};
+
+
+  
+
+
+  // Balance total
+  const balance = transacciones.reduce(
+    (acc, item) =>
+      acc + item.monto,
+    0
+  );
+
+  // Ingresos
+  const ingresos = transacciones
+    .filter(item => item.monto > 0)
+    .reduce(
+      (acc, item) =>
+        acc + item.monto,
+      0
+    );
+
+  // Gastos
+  const gastos = transacciones
+    .filter(item => item.monto < 0)
+    .reduce(
+      (acc, item) =>
+        acc + item.monto,
+      0
+    );
 
   return (
 
-    <div className="container">
+    <div className="app-layout">
 
-      <h1>Control de Gastos</h1>
+      <Sidebar />
 
-      <Balance
-        transacciones={transacciones}
-      />
+      <main className="main-content">
 
-      <FormularioTransaccion
-        agregarTransaccion={
-          agregarTransaccion
-        }
-      />
+        <h1>
+          Dashboard Financiero
+        </h1>
 
-      <ListaTransacciones
-        transacciones={transacciones}
-        eliminarTransaccion={
-          eliminarTransaccion
-        }
-      />
+        <DashboardCards
+          balance={balance}
+          ingresos={ingresos}
+          gastos={gastos}
+        />
+
+        <FormularioTransaccion
+          agregarTransaccion={
+            agregarTransaccion
+          }
+        />
+
+        <TransaccionesTabla
+            transacciones={transacciones}
+  eliminarTransaccion={
+    eliminarTransaccion
+  }
+        />
+
+      </main>
 
     </div>
 
