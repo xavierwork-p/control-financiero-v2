@@ -320,3 +320,206 @@ tr {
   opacity: 0.8;
   line-height: 1.6;
 }
+.objetivos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.objetivo-card {
+  background: #1e293b;
+  padding: 22px;
+  border-radius: 16px;
+}
+
+.objetivo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.objetivo-card p {
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.barra-progreso {
+  width: 100%;
+  height: 12px;
+  background: #0f172a;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.progreso {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 20px;
+}
+.aporte-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.aporte-box input {
+  flex: 1;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.aporte-box button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.aporte-box button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .aporte-box {
+    flex-direction: column;
+  }
+}
+.gasto-fijo-total {
+
+  background: #1e293b;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.gasto-fijo-total strong {
+
+  font-size: 24px;
+}
+/* =========================
+   ACCIONES DE CARDS
+========================= */
+
+.acciones-card {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-editar {
+  background: transparent;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-editar:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   GASTOS PLANIFICADOS
+========================= */
+
+.separador-section {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.separador-section h1 {
+  font-size: 28px;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 2px solid #2563eb;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.objetivo-card {
+  transition: 0.3s;
+}
+
+.objetivo-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   TABLAS RESPONSIVE
+========================= */
+
+.tabla-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tabla-container::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+  transition: 0.3s;
+}
+
+/* =========================
+   RESPONSIVE EXTRA
+========================= */
+
+@media (max-width: 900px) {
+
+  .acciones-card {
+    gap: 6px;
+  }
+
+  .objetivo-header {
+    gap: 10px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .objetivo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acciones-card {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .gasto-fijo-total {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+}
